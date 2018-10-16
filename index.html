@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="css/bootstrap.css">
-    <link href="css/styles.css">
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
     <title>Bank Account</title>
@@ -17,31 +17,31 @@
             <h4>Register a new account: </h4>
             <div class="form-group">
               <label for="name">Name: </label>
-              <input type="text" value="name">
+              <input type="text">
             </div>
             <div class="form-group">
               <label for="initial-deposit">Initial Deposit: </label>
-              <input type="text" value="initial-deposit">
+              <input type="text">
             </div>
+            <button type="submit" class="btn btn-success" id="register">Register</button>
           </div>
           <div class="col-md-6">
             <h4>Deposit or withdraw funds: </h4>
             <div class="form-group">
               <label for="deposit-amount">Deposit Amount: </label>
-              <input type="text" value="deposit-amount">
+              <input type="text">
             </div>
             <div class="form-group">
               <label for="withdrawal-amount">Withdrawal Amount: </label>
-              <input type="text" value="withdrawal-amount">
+              <input type="text">
             </div>
+            <p class="btn btn-success" id="transaction">Submit Transaction</p>
           </div>
         </div>
         <div class="row">
           <h4>Current Balance: </h4>
           <p id="balance"></p>
-        </div>
-        <div class="row">
-          <button type="submit" class="btn btn-success">Submit</button>
+          <p id="output-sentence"></p>
         </div>
       </form>
     </div>
