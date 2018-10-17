@@ -32,16 +32,16 @@ $(document).ready(function(){
     var nameInput = $('#name').val();
     var initialDepositInput = parseInt($('#initial-deposit').val());
     var newBankAccount = new BankAccount(nameInput, initialDepositInput,  0, 0);
-    console.log(newBankAccount);
 
-    if (initialDepositInput != "") {
-      newBankAccount.balance = initialDepositInput;
-
-      $("#balance").text(newBankAccount.balance);
-    } else if (initialDepositInput == "") {
+    if (!initialDepositInput) {
       $("#output-sentence").text("Put mo money in to start an account with us.");
+    } else {
+      newBankAccount.balance = initialDepositInput;
+      $("#balance").text(newBankAccount.balance);
     }
+
     clearRegistration();
+    
     $('#transaction-button').click(function(event){
     event.preventDefault();
     var depositAmountInput = parseInt($('#deposit-amount').val());
@@ -62,7 +62,6 @@ $(document).ready(function(){
       newBankAccount.withdrawal();
       console.log("both");
     }
-    console.log(newBankAccount);
     $("#balance").text(newBankAccount.balance);
     clearTransaction();
     })
