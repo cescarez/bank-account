@@ -55,7 +55,7 @@ $(document).ready(function(){
       newBankAccount.depositAmount = depositAmountInput;
       newBankAccount.deposit();
       console.log("deposit");
-    } else if (!withdrawalAmountInput && !depositAmountInput){
+    } else {
       newBankAccount.depositAmount = depositAmountInput;
       newBankAccount.deposit();
       newBankAccount.withdrawalAmount = withdrawalAmountInput;
