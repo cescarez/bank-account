@@ -1,4 +1,3 @@
-//business logic
 function BankAccount(name, balance, deposit, withdrawal) {
   this.name = name;
   this.balance = balance;
@@ -14,7 +13,6 @@ BankAccount.prototype.withdrawal = function() {
   this.balance -= this.withdrawalAmount;
 }
 
-
 var clearRegistration = function () {
   $('#name').val(" ");
   $('#initial-deposit').val(" ");
@@ -25,7 +23,7 @@ var clearTransaction = function() {
   $('#withdrawal-amount').val(" ");
 }
 
-//user interface
+
 $(document).ready(function(){
   $("#register-button").click(function(event){
     event.preventDefault();
@@ -33,15 +31,14 @@ $(document).ready(function(){
     var initialDepositInput = parseInt($('#initial-deposit').val());
     var newBankAccount = new BankAccount(nameInput, initialDepositInput,  0, 0);
 
-    if (!initialDepositInput) {
+    if (!initialDepositInput || initialDepositInput <= 0) {
       $("#output-sentence").text("Put mo money in to start an account with us.");
     } else {
       newBankAccount.balance = initialDepositInput;
       $("#balance").text(newBankAccount.balance);
     }
-
     clearRegistration();
-    
+
     $('#transaction-button').click(function(event){
     event.preventDefault();
     var depositAmountInput = parseInt($('#deposit-amount').val());
